@@ -19,6 +19,6 @@ setup(
     version='1.0.0',
     description='Test data generator for running Python apps on Bluemix',
     long_description=long_description,
-    url='https://github.com/Jag46/IBMCloud-Data_Generator_Tool',
+    url='https://github.com/Jag46/IBM_Test_Data_generator_tool/tree/master/Data_Generator_Tool',
     license='Apache-2.0'
 )
