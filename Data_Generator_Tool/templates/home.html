@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="home" id ='home'>
+    <div class="row">
+        <div class="col-sm-4">
+          {% with messages = get_flashed_messages(category_filter=["success"]) %}
+              {% if messages %}
+                  {%- for message in messages %}
+                      <div class="alert alert-{{ success }}" role="alert">
+                          <span class="bgcolor-green">{{ message }}</span>
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                  {% endfor -%}
+              {% endif %}
+          {% endwith %}
+        </div>
+        </div>
+        <div class="row2">
+        <div class="col-sm-4">
+          {% with messages = get_flashed_messages(category_filter=["warning"]) %}
+              {% if messages %}
+                  {%- for message in messages %}
+                      <div class="alert alert-{{ warning }}" role="alert">
+                          <span class="bgcolor-red">{{ message }}</span>
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true" >&times;</span>
+                          </button>
+                      </div>
+                  {% endfor -%}
+              {% endif %}
+          {% endwith %}
+        </div>
+        </div>
+        <div class="row3">
+        <div class="col-sm-4">
+          {% with messages = get_flashed_messages(category_filter=["danger"]) %}
+              {% if messages %}
+                  {%- for message in messages %}
+                      <div class="alert alert-{{ danger }}" role="alert">
+                          <span class="bgcolor-yellow">{{ message }}</span>
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                  {% endfor -%}
+              {% endif %}
+          {% endwith %}
+        </div>
+        <script src="//code.jquery.com/jquery.js"></script>
+         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        </div>
+    <div class="person1" style = "float:right">
+        <span style="float: right;width: 100%;">
+          <img src={{user_image}}
+            width="600" height = "445"> 
+        </span>
+    </div>
+    <table style="padding: 0px 0px 0px 0px;" cellSpacing = "10px">
+        <form name="Passdata" action="." method="post">
+          <tr>
+          <td><label>Please enter number of records* :</label></td>
+          <td><input type="text" name="Number_records" aria-describedby="sizing-addon1" minlength="1" maxlength="8" float = 'right' value=""/></td></tr>
+          <tr><td><label>Please enter your File name* : </label></td>
+          <td><input type="text" name="File_Name" aria-describedby="sizing-addon1" float = 'right' value=""/></td></tr>
+          <tr><td><label>Please enter your columns number* : </label></td>
+          <td><input type="text" name="Column_Number" aria-describedby="sizing-addon1" float = 'right' value=""/></td></tr>
+          <tr><td style="font-size: small;">(* indicates mandatory fields)</td></tr>
+          <tr><td><input type = "submit" id ='retrieve' value= "Generate_Data"/></td></tr>
+        </form>
+    </table>
+    <table style="padding: 0px 0px 0px 0px;" cellSpacing = "10px">
+    <tr>
+        <td style="font-size: small;">Choose column number in below list & Enter number in column number field</td></tr>
+      <tr>
+        <td style="font-size: small;">Enter more than 1 by using ',' (comma) seperated</td>
+    </tr>
+    <tr>
+    <td>
+    <form>
+    <fieldset style="width: 120%">
+    <select id = "selLanguage"
+        multiple = "multiple"
+        size = "29"
+        style="width: 100%; height: 170px">
+   <option value = "1">1 = name</option>
+   <option value = "2">2 = name_male</option>
+   <option value = "3">3 = name_female</option>
+   <option value = "4">4 = mobile_number</option>
+   <option value = "5">5 = dateOfBirth</option>
+   <option value = "6">6 = building_number</option>
+   <option value = "7">7 = city</option>
+   <option value = "8">8 = state</option>
+   <option value = "9">9 = country</option>
+   <option value = "10">10 = country_code</option> 
+   <option value = "11">11 = city_prefix</option> 
+   <option value = "12">12 = city_suffix</option> 
+   <option value = "13">13 = postalcode</option> 
+   <option value = "14">14 = accountNumber</option> 
+   <option value = "15">15 = secondary_address</option> 
+   <option value = "16">16 = street_address</option> 
+   <option value = "17">17 = street_name</option> 
+   <option value = "18">18 = zipcode</option> 
+   <option value = "19">19 = job</option> 
+   <option value = "20">20 = company_name</option>
+   <option value = "21">21 = email_address</option>
+   <option value = "22">22 = credit_card_number</option>
+   <option value = "23">23 = credit_card_provider</option>
+   <option value = "24">24 = credit_card_security_code</option>
+   <option value = "25">25 = random_digit</option>
+   <option value = "26">26 = date</option>
+   <option value = "27">27 = customerNumber</option>
+   <option value = "28">28 = IbanNumber</option>
+   <option value = "29">29 = phone_number</option>
+  </select>
+</fieldset>
+</form></td></tr>
+<!-- <tr>
+<td style="padding: 0px,0px,0px,0px;">
+<button type = "button"
+    onclick = "showChoices()">
+   Submit 
+  </button></td></tr> -->
+</table>
+<table style="padding: 0px 0px 0px 150px;">
+<tr>
+
+</tr>
+</table>
+</div>
+{% endblock %}
+
+
+

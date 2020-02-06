@@ -1,0 +1,5 @@
+---
+applications:
+ - name: DATA_GENERATOR_TOOL
+   random-route: true
+   memory: 128M

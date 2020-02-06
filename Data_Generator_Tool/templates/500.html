@@ -1,0 +1,13 @@
+{% block content %}
+<head>
+    <title>Test Data Generator App</title>
+</head>
+<div class="error" style="text-align: center;">
+    <h1>Uh oh!</h1>
+    <h2>Whoops!..Something went wrong.</h2>
+    <h2>Please enter valid input into the app & try again by clicking below 'Continue' Button</h2>
+    <form action="/redirect/">
+        <input  type = "submit" id ='retrieve' value= "Continue"/>
+    </form>
+</div>
+{% endblock %}
